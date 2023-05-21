@@ -1,0 +1,25 @@
+@import "../../../node_modules/normalize.css/normalize.css";
+@import "./fonts.scss";
+
+:root {
+  --root-font: "Wix-Made", sans-serif;
+  --main-color: #274156;
+  --red-color: #bc1529;
+}
+
+body {
+  padding: 0px 40px;
+  max-width: 1400px;
+  margin: auto;
+  box-sizing: border-box;
+  font-family: var(--root-font);
+  font-weight: 400;
+}
+
+menu,
+ul,
+li,
+main,
+h3 {
+  padding: 0;
+}
