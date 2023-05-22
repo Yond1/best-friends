@@ -23,3 +23,9 @@ main,
 h3 {
   padding: 0;
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0px 15px;
+  }
+}

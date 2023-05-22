@@ -6,6 +6,10 @@
       </a>
       <h1 class="header-logo-title">Лучший Друг</h1>
     </div>
+    <span @click="openBurgerMenu" class="header-burger">
+      <ui-burger-menu :active="active" />
+    </span>
+    <MenuMobile :links="links" @close-modal="active = false" :active="active" />
     <menu class="header-menu">
       <ul>
         <li>Найти Друга</li>
@@ -24,6 +28,14 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import BackGround from "./BackGround.vue";
+import MenuMobile from "../MenuMobile.vue";
+
+const links = [
+  { id: 1, title: "Найти Друга" },
+  { id: 2, title: "О нас" },
+  { id: 3, title: "Вопросы и ответы" },
+  { id: 4, title: "Помощь приюту" },
+];
 
 const HeaderSvg = ref("dogLogo");
 const toggle = () => {
@@ -36,6 +48,12 @@ onMounted(() => {
     toggle();
   }, 10000);
 });
+
+const active = ref(false);
+
+const openBurgerMenu = () => {
+  active.value = !active.value;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -45,6 +63,10 @@ onMounted(() => {
   grid-template-columns: 1fr 2fr 1fr;
   justify-content: space-between;
   align-items: center;
+  &-burger {
+    display: none;
+    z-index: 4;
+  }
   &-logo {
     display: flex;
     flex-direction: row;
@@ -66,7 +88,7 @@ onMounted(() => {
       justify-content: center;
       gap: 20px;
       li {
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 700;
         list-style: none;
         color: var(--main-color);
@@ -83,6 +105,23 @@ onMounted(() => {
   &-login {
     display: flex;
     justify-content: end;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &-menu {
+      display: none;
+    }
+    &-login {
+      display: none;
+    }
+    &-burger {
+      display: block;
+    }
   }
 }
 </style>

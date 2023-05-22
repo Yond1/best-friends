@@ -18,7 +18,7 @@
         />
       </svg>
     </span>
-    <h3 class="main-title">Добро Пожаловать В приют <br />"Лучший Друг!"</h3>
+    <h3 class="main-title">Добро Пожаловать!</h3>
     <div class="main-description">
       Нужна помощь в ремонте вольеров - техника, рабочие руки, строительные
       материалы.
@@ -31,6 +31,7 @@
 
 <style lang="scss" scoped>
 .main {
+  pointer-events: none;
   &-heart {
     position: absolute;
     top: 30%;
@@ -48,10 +49,10 @@
   align-items: center;
   justify-content: center;
   &-title {
-    padding: 6px 30px;
+    padding: 6px 20px;
     background: white;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +70,26 @@
     font-size: 20px;
   }
   &-bth {
+    pointer-events: all;
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    &-title {
+      font-size: 18px;
+    }
+    &-description {
+      display: none;
+    }
+    &-bth {
+      margin-top: 100px;
+      font-size: 18px;
+    }
+    &-heart {
+      top: 10%;
+    }
   }
 }
 
