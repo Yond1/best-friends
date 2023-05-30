@@ -27,7 +27,7 @@ const emit = defineEmits(["close-modal"]);
 
 <style lang="scss" scoped>
 .modal {
-  z-index: 100;
+  z-index: 50;
   position: fixed;
   top: 0;
   left: 0;

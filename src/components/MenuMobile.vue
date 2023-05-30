@@ -54,7 +54,6 @@ const emit = defineEmits(["close-menu"]);
         font-size: 18px;
         font-weight: 700;
         color: var(--main-color);
-        cursor: pointer;
         &:hover {
           opacity: 0.7;
         }

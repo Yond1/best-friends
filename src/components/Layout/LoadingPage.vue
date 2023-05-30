@@ -26,7 +26,7 @@ const props = defineProps({
   height: 100vh;
   background: rgba(255, 255, 255);
   left: 0;
-  z-index: 10;
+  z-index: 1000;
   &-content {
     width: 50%;
     height: 50%;

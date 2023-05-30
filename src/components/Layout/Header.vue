@@ -100,7 +100,6 @@ watch(active, (x) => {
         font-weight: 700;
         list-style: none;
         color: var(--main-color);
-        cursor: pointer;
         margin-top: 2px;
         border-bottom: 2px solid transparent;
         transition: 0.2s;

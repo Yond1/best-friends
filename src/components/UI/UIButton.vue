@@ -35,7 +35,6 @@ const props = defineProps({
   font-weight: 600;
   color: white;
   align-items: center;
-  cursor: pointer;
   transition: 0.3s;
   &:hover,
   &:focus {

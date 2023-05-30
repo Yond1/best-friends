@@ -1,4 +1,8 @@
 <template>
+  <span
+    :style="{ top: `${yOffset}px`, left: `${xOffset}px` }"
+    class="cursor"
+  ></span>
   <LoadingPage :loading="loading" />
   <Header />
   <Main />
@@ -14,7 +18,13 @@ import LoadingPage from "./components/Layout/LoadingPage.vue";
 import { onMounted, ref } from "vue";
 
 const loading = ref(true);
-console.log(LoadingPage);
+let xOffset = ref(10);
+let yOffset = ref(0);
+
+document.body.addEventListener("mousemove", (e) => {
+  xOffset.value = e.pageX;
+  yOffset.value = e.pageY;
+});
 
 onMounted(() => {
   const timer = setTimeout(() => {
@@ -24,4 +34,16 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.cursor {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--main-color);
+  border-radius: 100%;
+  opacity: 0.7;
+  transform: translate(-30.5%, -30.5%);
+  pointer-events: none;
+  z-index: 100;
+}
+</style>

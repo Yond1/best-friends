@@ -76,7 +76,6 @@ h2 {
     background-position: center 35%;
     background-repeat: no-repeat;
     background-size: cover;
-    cursor: pointer;
     border-radius: 5px;
     transition: 0.7s;
     &:hover,
@@ -97,6 +96,9 @@ h2 {
   }
 }
 @media screen and (max-width: 700px) {
+  h2 {
+    display: none;
+  }
   .about {
     grid-template-columns: repeat(2, 1fr);
     margin-top: -80px;

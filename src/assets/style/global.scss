@@ -6,6 +6,9 @@
   --main-color: #274156;
   --red-color: #bc1529;
 }
+* {
+  cursor: url("../paws.png"), pointer;
+}
 
 body {
   padding: 0px 40px;

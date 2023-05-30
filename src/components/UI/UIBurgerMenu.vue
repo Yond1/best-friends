@@ -20,7 +20,6 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .burger {
-  cursor: pointer;
   width: 40px;
   height: 40px;
   background: rgba(255, 0, 0, 0);

@@ -1,13 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import UIKit from '@/components/UI/index'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import UIKit from "@/components/UI/index";
 
-const app = createApp(App)
+const app = createApp(App);
 
-UIKit.forEach(UI => {
-    app.component(UI.name, UI)
-})
+UIKit.forEach((UI) => {
+  app.component(UI.name, UI);
+});
 
-app.mount('#app')
+app.mount("#app");
