@@ -1,5 +1,5 @@
 <template>
-  <div @click="emit('close-modal')" class="menu-mobile" v-show="active">
+  <div @click="emit('close-menu')" class="menu-mobile" v-show="active">
     <menu @click.stop class="menu-mobile-wrapper">
       <ul>
         <li :key="link.id" v-for="link of links">{{ link.title }}</li>
@@ -19,7 +19,7 @@ const props = defineProps({
     required: true,
   },
 });
-const emit = defineEmits(["close-modal"]);
+const emit = defineEmits(["close-menu"]);
 </script>
 
 <style lang="scss" scoped>

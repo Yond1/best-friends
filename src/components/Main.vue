@@ -23,7 +23,7 @@
       Нужна помощь в ремонте вольеров - техника, рабочие руки, строительные
       материалы.
     </div>
-    <ui-button class="main-bth">Перейти в католог наших друзей</ui-button>
+    <ui-button class="main-bth">Перейти в каталог наших друзей</ui-button>
   </main>
 </template>
 
@@ -31,6 +31,7 @@
 
 <style lang="scss" scoped>
 .main {
+  user-select: none;
   pointer-events: none;
   &-heart {
     position: absolute;

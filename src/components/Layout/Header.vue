@@ -9,7 +9,7 @@
     <span @click="openBurgerMenu" class="header-burger">
       <ui-burger-menu :active="active" />
     </span>
-    <MenuMobile :links="links" @close-modal="active = false" :active="active" />
+    <MenuMobile :links="links" @close-menu="active = false" :active="active" />
     <menu class="header-menu">
       <ul>
         <li>Найти Друга</li>
@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import BackGround from "./BackGround.vue";
 import MenuMobile from "../MenuMobile.vue";
 
@@ -54,6 +54,12 @@ const active = ref(false);
 const openBurgerMenu = () => {
   active.value = !active.value;
 };
+
+watch(active, (x) => {
+  x
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "");
+});
 </script>
 
 <style lang="scss" scoped>
@@ -73,6 +79,8 @@ const openBurgerMenu = () => {
     gap: 20px;
     align-items: center;
     &-title {
+      user-select: none;
+
       font-size: 24px;
       color: var(--main-color);
       pointer-events: none;
