@@ -46,4 +46,9 @@ onMounted(() => {
   pointer-events: none;
   z-index: 100;
 }
+@media screen and (min-width: 1024px) {
+  .cursor {
+    display: none;
+  }
+}
 </style>
